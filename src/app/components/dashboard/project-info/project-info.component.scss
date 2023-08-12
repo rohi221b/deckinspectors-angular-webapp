@@ -98,3 +98,176 @@
 .bi:hover {
   color: #007bff;
 }
+
+*{
+  margin:0px;
+  padding:0px;
+  /* background-color:rgb(184, 212, 245); */
+}
+.container01{
+  background-color:rgb(184, 212, 245);
+  padding-top: 100px;
+  padding-left:100px;
+  height:1000px;
+}
+.heading{
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  height:30px;
+  display: flex;
+  flex-direction:row;
+  padding:5px;
+  padding-bottom: 20px;
+}
+.component01{
+  margin-right:100px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  width: max-content;
+  height:100px;
+  border:solid white 2px;
+  border-radius:10px;
+  background-color: #fff;
+  display: flex;
+  flex-direction:row;
+  align-items: center;
+  padding: 20px 10px 10px;
+  justify-content: space-between;
+  cursor: pointer;
+
+}
+.card01:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+.f1{
+  width:max-content;
+  padding: 10px;
+}
+select{
+  width: 200px;
+  height: 50px;
+  border-radius: 10px;
+}
+
+/* CheckBox */
+/* Hide the default checkbox */
+.custom-checkbox input[type="checkbox"] {
+  display: none;
+}
+
+/* Style the custom checkbox */
+.custom-checkbox {
+  position: relative;
+  padding-left: 25px;
+  cursor: pointer;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background-color: #eee;
+}
+
+/* On mouse-over, add a grey background color */
+.custom-checkbox:hover .checkmark {
+  background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.custom-checkbox input:checked + .checkmark {
+  background-color: #db7434;
+}
+
+/* Create the checkmark/indicator (hidden by default) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when the checkbox is checked */
+.custom-checkbox input:checked + .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark as a tick */
+.custom-checkbox .checkmark:after {
+  left: 6px;
+  top: 2px;
+  width: 5px;
+  height: 10px;
+  border: solid black;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+li{
+  list-style-type: none;
+  margin:20px;
+  padding: 0;
+}
+.para{
+  display: flex;
+  flex-direction:row;
+}
+.Projectname{
+  width: 525px;
+  padding:10px;
+}
+.AssignedTo{
+  color: blue;
+  width:200px;
+  padding:10px;
+}
+.f14{
+  padding:15px;
+}
+.custom-select {
+  position: relative;
+  display: inline-block;
+}
+
+.select-icon,
+.dropdown-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.select-icon {
+  left: 10px;
+}
+
+.dropdown-arrow {
+  right: 10px;
+}
+
+.green-dot {
+  color: #00cc00; /* Green color */
+  margin-right: 5px;
+}
+
+.custom-select select {
+  appearance: none;
+  padding: 8px 30px 8px 30px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #fff;
+  font-size: 14px;
+  color: #333;
+  cursor: pointer;
+}
+
+.custom-select select:focus {
+  outline: none;
+  border-color: #2196F3;
+}
+
+.custom-select option {
+  padding: 8px;
+  font-size: 14px;
+}

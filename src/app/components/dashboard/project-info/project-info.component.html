@@ -1,27 +1,99 @@
-<div class="horizontal-div border border-secondary mt-2">
-  <div class="profile-section">
-    <div>
-      <div>
-        <span class="name"> {{projectInfo.name }} </span>
+<!--<div class="horizontal-div border border-secondary mt-2">-->
+<!--  <div class="profile-section">-->
+<!--    <div>-->
+<!--      <div>-->
+<!--        <span class="name"> {{ projectInfo.name }} </span>-->
+<!--      </div>-->
+<!--      <div>-->
+<!--        <b>Visual Report </b> {{ projectInfo.address }} <b> Assigned To : </b> {{projectInfo.assignedto.join(',')}}-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--  <div>-->
+<!--    <div class="options-section">-->
+<!--      <div class="checkbox-label">-->
+<!--        <input type="checkbox" id="allow-offline" class="checkbox">-->
+<!--        <label for="allow-offline" class="checkbox-text">Allow Offline</label>-->
+<!--      </div>-->
+<!--      <div class="icon-section">-->
+<!--        <span class="bi bi-person-circle" (click)="openAssignProjectModal()"></span>-->
+<!--        <span class="bi bi-upload icon" (click)="openUploadFilesModal()"></span>-->
+<!--        <span class="bi bi-download icon" (click)="openDownloadReportModal()"></span>-->
+<!--        <span class="bi bi-lightning icon"></span>-->
+<!--        <span class="bi bi-file icon"></span>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
+
+<div class="component01 border border-secondary mt-2">
+  <div class="Projectname">
+    <div class="para">
+      <b>{{projectInfo.name}} &nbsp;</b>
+      <span class="material-symbols-outlined">calendar_month</span>
+      <p>{{ projectInfo.createdate | date }}</p>
+    </div>
+    <div class="para">
+      <b>Visual Report &nbsp;</b>
+      <p>{{projectInfo.address}}</p>
+    </div>
+  </div>
+  <div class="AssignedTo">
+    <div *ngFor="let name of projectInfo.assignedto">
+      {{name}}
+    </div>
+  </div>
+  <div class="f1">
+    <div class="checkbox-container">
+      <label class="custom-checkbox">
+        <input type="checkbox">
+        <span class="checkmark"></span>
+      </label>
+    </div>
+  </div>
+  <div class="f1">
+    <div class="select-container">
+      <div class="custom-select">
+        <div class="select-icon">
+          <i class="fa fa-user-circle"></i>
+        </div>
+        <select>
+          <option value="user1">Assign User</option>
+          <option value="user2">User 2</option>
+          <option value="user3">User 3</option>
+        </select>
+        <div class="dropdown-arrow">
+          <i class="fas fa-chevron-down"></i>
+        </div>
       </div>
-      <div>
-        <b>Visual Report </b> {{ projectInfo.address }} <b> Assigned To : </b> {{projectInfo.assignedto.join(',')}}
+    </div>
+
+  </div>
+  <div class="f1">
+    <div class="custom-select">
+      <div class="select-icon">
+        <i class="fas fa-circle green-dot"></i>
+      </div>
+      <select>
+        <option value="user1"><i class="fas fa-circle green-dot"></i>Running</option>
+        <option value="user2"><i class="fas fa-circle green-dot"></i> User 2</option>
+        <option value="user3"><i class="fas fa-circle green-dot"></i> User 3</option>
+      </select>
+      <div class="dropdown-arrow">
+        <i class="fas fa-chevron-down"></i>
       </div>
     </div>
   </div>
-  <div>
-    <div class="options-section">
-      <div class="checkbox-label">
-        <input type="checkbox" id="allow-offline" class="checkbox">
-        <label for="allow-offline" class="checkbox-text">Allow Offline</label>
-      </div>
-      <div class="icon-section">
-        <span class="bi bi-person-circle" (click)="openAssignProjectModal()"></span>
-        <span class="bi bi-upload icon" (click)="openUploadFilesModal()"></span>
-        <span class="bi bi-download icon" (click)="openDownloadReportModal()"></span>
-        <span class="bi bi-lightning icon"></span>
-        <span class="bi bi-file icon"></span>
-      </div>
+  <div class="f1">
+    <div class="f14">
+      <span class="bi bi-upload icon" (click)="openUploadFilesModal()"></span>
+    </div>
+  </div>
+  <div class="f1">
+    <div class="f14">
+      <span class="bi bi-download icon" (click)="openDownloadReportModal()"></span>
     </div>
   </div>
 </div>
+
+
