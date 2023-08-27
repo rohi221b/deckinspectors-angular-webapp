@@ -34,7 +34,8 @@ export class ProjectDetailsUpperSectionComponent implements OnInit{
 
   ngOnInit(): void {
     this.subscribeToProjectState();
-    this.subscribeToProjectInfo();
+    this.subscribeToProjectInfo_();
+    // this.subscribeToProjectInfo();
   }
   private subscribeToProjectState() {
     this.store.select(ProjectQuery.getProjectModel).subscribe(data => {
@@ -152,6 +153,7 @@ export class ProjectDetailsUpperSectionComponent implements OnInit{
   private fetchProjectIdFromState(): void {
     this.store.select(BackNavigation.getPreviousStateModelChain).pipe(take(1)).subscribe((previousState: any) => {
       this.projectInfo = previousState.stack[previousState.stack.length - 1];
+      console.log(this.projectInfo);
       if (this.projectInfo.type === 'subproject') {
         this.projectType = 'subproject';
         let subprojectid = this.projectInfo._id === undefined ? (<any>this.projectInfo).id : this.projectInfo._id;
@@ -170,6 +172,31 @@ export class ProjectDetailsUpperSectionComponent implements OnInit{
         this.fetchLocationDetails(projectid);
       }
     });
+  }
+
+  private subscribeToProjectInfo_() {
+    this.store.select(BackNavigation.getPreviousStateModelChain).subscribe((previousState: any) => {
+      this.projectInfo = previousState.stack[previousState.stack.length - 1];
+      console.log(this.projectInfo);
+      if (this.projectInfo.type === 'subproject') {
+        this.projectType = 'subproject';
+        let subprojectid = this.projectInfo._id === undefined ? (<any>this.projectInfo).id : this.projectInfo._id;
+        this.fetchSubprojectDetails(subprojectid)
+      } else if (this.projectInfo.type === 'project'){
+        this.projectType = 'project';
+        this.disableInvasiveBtn = !this.projectInfo.isInvasive;
+        let projectid = this.projectInfo._id === undefined ? (<any>this.projectInfo).id : this.projectInfo._id;
+        this.fetchProjectDetails(projectid);
+      } else if (this.projectInfo.type === 'location' ||
+        this.projectInfo.type === 'projectlocation' ||
+        this.projectInfo.type === 'apartment' ||
+        this.projectInfo.type === 'buildinglocation') {
+        this.projectType = 'location';
+        let projectid = this.projectInfo._id === undefined ? (<any>this.projectInfo).id : this.projectInfo._id;
+        this.fetchLocationDetails(projectid);
+      }
+    });
+
   }
 
 }
