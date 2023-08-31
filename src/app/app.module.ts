@@ -53,6 +53,7 @@ import { ConclusiveSectionModalComponent } from './forms/conclusive-section-moda
 import { UsersComponent } from './components/users/users.component';
 import { ModalComponent } from './components/common/modal/modal.component';
 import { MdbModalService } from 'mdb-angular-ui-kit/modal';
+import { ProjectDescriberComponent } from './components/dashboard/project-describer/project-describer.component';
 
 
 
@@ -89,7 +90,8 @@ import { MdbModalService } from 'mdb-angular-ui-kit/modal';
     InvasiveSectionModalComponent,
     ConclusiveSectionModalComponent,
     UsersComponent,
-    ModalComponent
+    ModalComponent,
+    ProjectDescriberComponent
   ],
   imports: [
     BrowserModule,

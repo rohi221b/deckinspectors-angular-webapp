@@ -34,7 +34,6 @@ export class ProjectInfoComponent {
     dialogRef.afterClosed().subscribe(data => {
       this.projectAssignedEvent.emit({isAssigned: data.isAssigned, apiCalled: data.apiCalled});
      })
-
   }
 
   openUploadFilesModal() {
