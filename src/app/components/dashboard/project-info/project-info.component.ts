@@ -16,10 +16,12 @@ export class ProjectInfoComponent {
   @Output() projectAssignedEvent = new EventEmitter<any>();
   @Output() childClickEventTriggered = new EventEmitter<boolean>();
   @Output() markCompletedEvent = new EventEmitter<boolean>();
+
+ 
   constructor(private dialog: MatDialog, private httpsRequestService:HttpsRequestService) { }
 
   isAdmin: boolean = ((JSON.parse(localStorage.getItem('user')!))?.role === "admin");
-
+  Status:String='false';
   openAssignProjectModal() {
     this.childClickEventTriggered.emit(true);
     const dialogConfig = new MatDialogConfig();
@@ -77,5 +79,13 @@ export class ProjectInfoComponent {
         console.log(error);
       }
     )
+  }
+  StatusCheck(){
+    this.childClickEventTriggered.emit(true);
+    this.Status='true';
+  }
+
+  folderOpen(){
+    this.childClickEventTriggered.emit(true);
   }
 }
